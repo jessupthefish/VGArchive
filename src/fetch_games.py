@@ -3,16 +3,20 @@ import sqlite3
 import os
 
 # API and Database Configurations
-API_KEY = "b6435cd3f8734635b7151575475276a4"
+API_KEY = os.getenv("RAWG_API_KEY", "")
 BASE_URL = "https://api.rawg.io/api/games"
-DB_PATH = "/Users/stevenjessup/Desktop/VGarchive/video_game_archive.db"
+DB_PATH = "/Users/stevenjessup/Desktop/VGArchive/video_game_archive.db"
 
 # Function to fetch data from the API
 def fetch_game_data(page=1):
+    if not API_KEY:
+        print("Error: API key is missing. Please set the RAWG_API_KEY environment variable.")
+        return None
+
     params = {
         "key": API_KEY,
         "page": page,
-        "page_size": 100  # Number of games per page; adjust as needed
+        "page_size": 100
     }
     response = requests.get(BASE_URL, params=params)
     response.raise_for_status()  # Raise an error for bad responses
