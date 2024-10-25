@@ -1,5 +1,5 @@
 
-# Video Game Archive
+# VG Archive
 
 A C++ and Python application for managing a video game database. Users can add, view, update, delete, and search game records, with optional data fetching from the RAWG API to update the database.
 
