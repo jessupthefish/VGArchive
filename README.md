@@ -1,11 +1,11 @@
 
-# Video Game Archive
+# VGArchive
 
 A C++ and Python application for managing a video game database. Users can add, view, update, delete, and search game records, and even fetch new game data directly from the RAWG API.
 
 ## Project Structure
 
-- **VGarchive/**: Main project folder
+- **VGAFrchive/**: Main project folder
   - **src/**: Contains the main application code
     - `main.cpp`: Main C++ code for interacting with the database
     - `fetch_games.py`: Python script for fetching data from RAWG API
@@ -55,12 +55,12 @@ Build the C++ code using CMake:
 mkdir build && cd build
 cmake ..
 make
-./VGarchive
+./VGArchive
 ```
 
 ## Usage
 
-When you run the C++ application (`VGarchive`), you will see a menu with the following options:
+When you run the C++ application (`VGArchive`), you will see a menu with the following options:
 
 1. **Add Game**: Manually add a new game entry by entering details such as title, genre, release date, developer, platform, description, and rating.
 2. **View All Games**: Display all games currently stored in the database.
