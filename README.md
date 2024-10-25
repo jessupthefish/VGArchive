@@ -5,7 +5,7 @@ A C++ and Python application for managing a video game database. Users can add, 
 
 ## Project Structure
 
-- **VGAFrchive/**: Main project folder
+- **VGArchive/**: Main project folder
   - **src/**: Contains the main application code
     - `main.cpp`: Main C++ code for interacting with the database
     - `fetch_games.py`: Python script for fetching data from RAWG API
