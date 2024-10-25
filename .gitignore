@@ -1,0 +1,21 @@
+# Ignore build directories and files
+build/
+cmake-build-debug/
+*.o
+*.exe
+Makefile
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+
+# Ignore IDE settings
+.idea/
+.vscode/
+
+# Ignore virtual environment
+venv/
+
+# Ignore Python compiled files
+__pycache__/
+*.pyc
+
