@@ -62,7 +62,7 @@ make
 
 ## Usage
 
-When you run the C++ application (`VGArchive`), the following menu options are available:
+When you run (`VGArchive`), the following menu options are available:
 
 1. **Add Game**: Enter details to add a new game (title, genre, release date, developer, platform, description, and rating).
 2. **View All Games**: Display all games currently stored in the database.
