@@ -32,7 +32,7 @@ The project includes a pre-existing SQLite database (`video_game_archive.db`) in
 
 ### 2. Fetch Data from the RAWG API (Optional)
 
-To update the database with the latest data from the RAWG API, use `fetch_games.py`. This requires a RAWG API key, which should be set as an environment variable for secure handling.
+To update the database with new data from the RAWG API, use `fetch_games.py`. This requires a RAWG API key, which should be set as an environment variable for secure handling.
 
 - **Set the Environment Variable**:
   - In your terminal, set the API key for the session by running:
@@ -41,13 +41,12 @@ To update the database with the latest data from the RAWG API, use `fetch_games.
     ```
   - This will make the API key available to the `fetch_games.py` script when it's run.
 
-- Run the script with Python, entering your API key when prompted:
+- Run the script:
 
   ```bash
   python3 src/fetch_games.py
   ```
 
-  This will update the database with new game data.
 
 ### 3. Build and Run the C++ Application
 
@@ -71,15 +70,6 @@ When you run (`VGArchive`), the following menu options are available:
 5. **Search Game**: Search for games by title, genre, or platform.
 6. **Exit**: Close the application.
 7. **Fetch New Data from API**: Run the Python script to refresh game data in the database.
-
-## Notes on API Usage
-
-- **API Key Requirement**: To fetch data from the RAWG API, obtain an API key and set it as the `RAWG_API_KEY` environment variable.
-- **Optional Fetch**: Fetching from the API is only necessary to update or refresh the database. The program will function with the provided `video_game_archive.db`.
-
-## Contributions
-
-Contributions are welcome. Please open an issue or submit a pull request for any changes.
 
 ## Acknowledgments
 
