@@ -1,77 +1,56 @@
-
 # VG Archive
 
-A C++ and Python application for managing a video game database. Users can add, view, update, delete, and search game records, with optional data fetching from the RAWG API to update the database.
+A C++ command-line application for managing a video game database, backed by
+SQLite. Add, view, update, delete, and search game records.
 
-## Project Structure
-
-* **VGArchive/**: Main project folder
-  * **src/**: Contains the main application code
-    * `main.cpp`: Main C++ file for database interactions
-    * `fetch_games.py`: Python script to fetch data from the RAWG API
-  * **data/**: Stores the SQLite database and SQL initialization script
-    * `video_game_archive.db`: SQLite database file
-    * `init_db.sql`: SQL script to initialize the database schema, if needed
-  * `.gitignore`: Excludes specific files from version control
-  * `README.md`: Project documentation
-  * `CMakeLists.txt`: Build configuration for C++
+This was the first project I built.
 
 ## Requirements
 
-### System Requirements
+- A C++ compiler
+- CMake
+- SQLite3
 
-- **C++ Compiler**
-- **Python 3.12** or higher
-- **SQLite3**
-
-## Setup Instructions
-
-### 1. Database Setup
-
-The project includes a pre-existing SQLite database (`video_game_archive.db`) in the `data/` folder, which should be ready to use. If you need to repopulate the database, use the `fetch_games.py` script with a RAWG API key.
-
-### 2. Fetch Data from the RAWG API (Optional)
-
-To update the database with new data from the RAWG API, use `fetch_games.py`. This requires a RAWG API key, which should be set as an environment variable for secure handling.
-
-- **Set the Environment Variable**:
-  - In your terminal, set the API key for the session by running:
-    ```bash
-    export RAWG_API_KEY="your_actual_api_key"
-    ```
-  - This will make the API key available to the `fetch_games.py` script when it's run.
-
-- Run the script:
-
-  ```bash
-  python3 src/fetch_games.py
-  ```
-
-
-### 3. Build and Run the C++ Application
-
-To compile and run the application, use the provided CMake configuration.
+## Build and run
 
 ```bash
-mkdir build && cd build
-cmake ..
-make
-./VGArchive
+cmake -B build
+cmake --build build
+./build/VGArchive
 ```
+
+Run it from the project root. The database path is relative (`data/video_game_archive.db`),
+so launching the binary from inside `build/` will fail to open it.
 
 ## Usage
 
-When you run (`VGArchive`), the following menu options are available:
+The application presents a menu:
 
-1. **Add Game**: Enter details to add a new game (title, genre, release date, developer, platform, description, and rating).
-2. **View All Games**: Display all games currently stored in the database.
-3. **Update Game Rating**: Update the rating for a specific game by its title.
-4. **Delete Game**: Delete a game entry from the database by its title.
-5. **Search Game**: Search for games by title, genre, or platform.
-6. **Exit**: Close the application.
-7. **Fetch New Data from API**: Run the Python script to refresh game data in the database.
+1. **Add Game**: enter title, genre, release date, developer, platform, description, and rating
+2. **View All Games**: display everything currently stored
+3. **Update Game Rating**: change the rating for a game by title
+4. **Delete Game**: remove a game by title
+5. **Search Game**: search by title, genre, or platform
+6. **Exit**
+
+## Project structure
+
+```
+src/
+  main.cpp                 # Application and all database interactions
+data/
+  video_game_archive.db    # Pre-populated SQLite database
+  init_db.sql              # Schema initialization script
+CMakeLists.txt             # Build configuration
+```
+
+The included database is ready to use. To start from an empty one, create it
+from the schema:
+
+```bash
+sqlite3 data/video_game_archive.db < data/init_db.sql
+```
 
 ## Acknowledgments
 
-- **RAWG API**: Used to fetch game data updates.
-- **SQLite**: SQLite is the database engine used to store game data.
+- **SQLite**: the database engine used to store game data.

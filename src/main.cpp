@@ -147,7 +147,7 @@ int main() {
 
     int choice;
     while (true) {
-        std::cout << "\n1. Add Game\n2. View All Games\n3. Update Game Rating\n4. Delete Game\n5. Search Game\n6. Exit\n7. Fetch New Data from API\n";
+        std::cout << "\n1. Add Game\n2. View All Games\n3. Update Game Rating\n4. Delete Game\n5. Search Game\n6. Exit\n";
         std::cout << "Enter your choice: ";
         std::cin >> choice;
 
@@ -194,16 +194,6 @@ int main() {
         } else if (choice == 6) {
             // Exit
             break;
-
-        } else if (choice == 7) {
-            // Fetch data from API
-            std::cout << "Running fetch_games.py to fetch data from the RAWG API...\n";
-            int result = system("python3 src/fetch_games.py");
-            if (result == 0) {
-                std::cout << "Data fetched successfully!\n";
-            } else {
-                std::cout << "Failed to fetch data. Please ensure Python and the necessary packages are installed.\n";
-            }
 
         } else {
             std::cout << "Invalid choice, please try again." << std::endl;
